@@ -46,7 +46,8 @@
 ## Description of files in the repository
 
 	1. 0-run : Shell script that runs Python code
-	2. 1-run_inline - Shell script that runs Python code
-	3. 
+	2. 1-run_inline : Shell script that runs Python code
+	3. 2. 2-print.py : Python script that prints a specific line
+	4.
 
 
