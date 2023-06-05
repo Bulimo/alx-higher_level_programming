@@ -49,6 +49,7 @@
 	2. 1-run_inline : Shell script that runs Python code
 	3. 2. 2-print.py : Python script that prints a specific line
 	4. 3-print_number.py : Complete this source code in order to print the integer stored in the variable number
-	5. 
+	5. 4-print_float.py : Complete the source code in order to print the float stored in the variable number with a precision of 2 digits
+	6. 
 
 
