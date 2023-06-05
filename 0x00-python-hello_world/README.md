@@ -53,4 +53,5 @@
 	6. 5-print_string.py : Complete this source code in order to print 3 times a string stored in the variable str, followed by its first 9 characters.
 	7. 6-concat.py : Complete this source code to print Welcome to Holberton School!
 	8. 7-edges.py : Complete this source code to print characters at specific position in word
-	9. 
+	9. 8-concat_edges.py : Complete this source code to print object-oriented programming with Python, followed by a new line.
+	10. 
