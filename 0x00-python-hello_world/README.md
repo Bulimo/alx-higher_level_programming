@@ -50,6 +50,7 @@
 	3. 2. 2-print.py : Python script that prints a specific line
 	4. 3-print_number.py : Complete this source code in order to print the integer stored in the variable number
 	5. 4-print_float.py : Complete the source code in order to print the float stored in the variable number with a precision of 2 digits
-	6. 
+	6. 5-print_string.py : Complete this source code in order to print 3 times a string stored in the variable str, followed by its first 9 characters.
+	7. 
 
 
