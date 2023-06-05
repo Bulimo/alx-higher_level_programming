@@ -1,5 +1,3 @@
-#!/usr/bin/python3
 def magic_calculation(a, b):
-	val = 98
-	return (a ** b  + val)
-
+    val = 98
+    return (a ** b + val)
