@@ -19,7 +19,7 @@ def calc(args):
     elif args[2] == '/':
         print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
     else:
-        print("{}".format("Unknown operator. Available operators: +, -, *"
+        print("{}".format("Unknown operator. Available operators: +, -, * "
                           "and /"))
         sys.exit(1)
 
