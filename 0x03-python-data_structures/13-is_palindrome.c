@@ -11,36 +11,37 @@ int is_palindrome(listint_t **head)
 {
 	int len = 0, i = 0;
 	int *data;
-	listint_t *iter;
+	listint_t *iter, *fast_ptr;
 
 	if (head == NULL)
 		return (0);
 	if (*head == NULL)
 		return (1);
 	iter = *head;
-	data = malloc(sizeof(int) * 1024);
+	fast_ptr = *head;
+	while (fast_ptr && fast_ptr->next)
+	{
+		len++;
+		fast_ptr = fast_ptr->next->next;
+	}
+	len = (fast_ptr) ? ((len * 2) + 1) : (len * 2);
+	data = malloc(sizeof((*head)->n) * ((len + 1) / 2));
 	if (data == NULL)
 		exit(1);
 	while (iter)
 	{
-		data[i] = iter->n;
-		iter = iter->next;
-		len++;
+		if (i < ((len + 1) / 2))
+			data[i] = iter->n;
+		else
+		{
+			if (iter->n != data[len - i - 1])
+			{
+				free(data);
+				return (0);
+			}
+		}
 		i++;
-		if (i == 1024)
-		{
-			data = realloc(data, 2 * i);
-			if (data == NULL)
-				exit(1);
-		}
-	}
-	for (i = 0; i < (len / 2); i++)
-	{
-		if (data[i] != data[len - i - 1])
-		{
-			free(data);
-			return (0);
-		}
+		iter = iter->next;
 	}
 	free(data);
 	return (1);
