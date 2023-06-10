@@ -24,6 +24,8 @@ int is_palindrome(listint_t **head)
 		len++;
 		fast_ptr = fast_ptr->next->next;
 	}
+	if (len == 1)
+		return (1);
 	len = (fast_ptr) ? ((len * 2) + 1) : (len * 2);
 	data = malloc(sizeof((*head)->n) * ((len + 1) / 2));
 	if (data == NULL)
