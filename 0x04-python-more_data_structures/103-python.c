@@ -24,7 +24,7 @@ void print_python_bytes(PyObject *p)
 		len = size < 10 ? size + 1 : 10;
 		printf("  first %ld bytes:", len);
 		for (i = 0; i < len; i++)
-			printf(" %x", str[i]);
+			printf(" %02x", (unsigned char)str[i]);
 		printf("%s", "\n");
 	}
 	else
@@ -44,6 +44,7 @@ void print_python_list(PyObject *p)
 {
 	Py_ssize_t p_len, i = 0;
 	PyObject *elem;
+	PyObject *type;
 
 	p_len = PyList_Size(p);
 	printf("[*] Python List info\n");
@@ -54,7 +55,8 @@ void print_python_list(PyObject *p)
 		elem = ((PyListObject *)p)->ob_item[i];
 		if (elem)
 		{
-			printf("Element %ld: %s\n", i, ((PyTypeObject *)elem)->tp_name);
+			type = PyObject_Type(elem);
+			printf("Element %ld: %s\n", i, ((PyTypeObject *)type)->tp_name);
 			if (PyBytes_Check(elem))
 				print_python_bytes(elem);
 		}
