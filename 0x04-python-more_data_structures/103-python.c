@@ -46,7 +46,7 @@ void print_python_list(PyObject *p)
 	PyObject *elem;
 	PyObject *type;
 
-	p_len = PyList_Size(p);
+	p_len = ((PyVarObject *)p)->ob_size;
 	printf("[*] Python List info\n");
 	printf("[*] Size of the Python List = %lu\n", p_len);
 	printf("[*] Allocated = %ld\n", ((PyListObject *)p)->allocated);
@@ -59,6 +59,7 @@ void print_python_list(PyObject *p)
 			printf("Element %ld: %s\n", i, ((PyTypeObject *)type)->tp_name);
 			if (PyBytes_Check(elem))
 				print_python_bytes(elem);
+			Py_DECREF(type);
 		}
 	}
 }
