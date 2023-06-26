@@ -33,4 +33,7 @@
 	. 4-list_division.py - a function that divides element by element 2 lists.
 	. 5-raise_exception.py - a function that raises a type exception.
 	. 6-raise_exception_msg.py - a function that raises a name exception with a message.
-	.
+	. 100-safe_print_integer_err.py - a function that prints an integer.
+	. 101-safe_function.py - a function that executes a function safely.
+	. 102-magic_calculation.py - Python function def magic_calculation(a, b): that does exactly the same as the given Python bytecode:
+	. 103-python.c - three C functions that print some basic info about Python lists, Python bytes an Python float objects.
