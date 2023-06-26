@@ -69,7 +69,7 @@ void print_python_list(PyObject *p)
 	PyObject *elem;
 	PyObject *type;
 
-	printf("[*] Python List info\n");
+	printf("[*] Python list info\n");
 	fflush(stdout);
 	if (PyList_Check(p))
 	{
