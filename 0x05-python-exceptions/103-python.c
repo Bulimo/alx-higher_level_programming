@@ -48,7 +48,7 @@ void print_python_float(PyObject *p)
 	if (PyFloat_Check(p))
 	{
 		value = ((PyFloatObject *)p)->ob_fval;
-		printf("  value: %.16g\n", value);
+		printf("  value: %.17g\n", value);
 		fflush(stdout);;
 	}
 	else
