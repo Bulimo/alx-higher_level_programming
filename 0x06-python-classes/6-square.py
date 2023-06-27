@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module 5-sqare:
+Module 6-sqare:
     defines a square class
 """
 
@@ -28,7 +28,7 @@ class Square:
         Return:
             self.__size * self.__size
         """
-        return self.__size * self.__size
+        return self.__size ** 2
 
     @property
     def size(self):
@@ -76,7 +76,7 @@ class Square:
                 Throw an error if position is not a tuple of 2 integers
         """
         if type(value) != tuple or len(value) != 2 or type(value[0]) != int \
-                or type(value[1] != int) or value[0] < 0 or value[1] < 0:
+                or type(value[1]) != int or value[0] < 0 or value[1] < 0:
             raise TypeError('position must be a tuple of 2 positive integers')
         else:
             self.__position = value
@@ -86,7 +86,7 @@ class Square:
         Method that prints in stdout the square with the character #
         """
         if (self.__size == 0):
-            print()
+            print("")
         else:
             print("\n" * self.__position[1], end="")
             print("\n".join([" " * self.__position[0] +
