@@ -8,6 +8,19 @@ Module 6-sqare:
 class Square:
     """
     A class Square definition
+
+    Args:
+        size (int): size of a side in square
+        position (int): position of the square
+
+    Functions:
+        __init__(self, size, position)
+        size(self)
+        size(self, value)
+        position(self)
+        position(self, value)
+        area(self)
+        my_print(self)
     """
     def __init__(self, size=0, position=(0, 0)):
         """
