@@ -43,4 +43,8 @@
 ## Description of files in the repository
 
     . 0-square.py - an empty class Square that defines a square
+	. 1-square.py - a class Square that defines a square by giving it size attribute
+	. 2-square.py - a class Square that defines a square by private instance attribute: size. size must be an integer
+	. 3-square.py - a class Square created above with Public method area(): that returns the current square area
+	. 4-square.py - a class Square created above with Public setter and getter methods
 	.
