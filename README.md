@@ -9,6 +9,7 @@ Each folder in the repository is a test on specific concepts of the language.
 	. 0x03-python-data_structures
     . 0x04-python-more_data_structures
 	. 0x05-python-exceptions
+	. 0x06-python-classes
 
 ## Authors
 
