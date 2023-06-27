@@ -114,8 +114,8 @@ class Square:
         if (self.__size == 0):
             sq_str += "\n"
         else:
-            for _ in range(self.__position[1]):
-                sq_str += "\n"
-            for _ in range(self.__size):
-                sq_str += " " * self.__position[0] + "#" * self.__size + "\n"
+            sq_str += "\n" * self.position[1]
+            sq_str += "\n".join([" " * self.__position[0] +
+                                "#" * self.__size
+                                 for rows in range(self.__size)])
         return sq_str
