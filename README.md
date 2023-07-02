@@ -10,6 +10,7 @@ Each folder in the repository is a test on specific concepts of the language.
     . 0x04-python-more_data_structures
 	. 0x05-python-exceptions
 	. 0x06-python-classes
+	. 0x07-python-test_driven_development
 
 ## Authors
 

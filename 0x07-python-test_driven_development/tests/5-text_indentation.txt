@@ -1,0 +1,30 @@
+``text_identation()`` prints 2 new lines at the end of characters '.', '?' and ':'.
+::
+		>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+		>>> text_indentation("Hello. How are you?")
+		Hello.
+		<BLANKLINE>
+		How are you?
+		<BLANKLINE>
+
+		>>> text_indentation("Hello, how are you!!")
+		Hello, how are you!!
+
+		>>> text_indentation(".")
+		.
+		<BLANKLINE>
+
+		>>> text_indentation(False)
+		Traceback (most recent call last):
+		TypeError: text must be a string
+
+		>>> text_indentation(['J', 'o', 'h', 'n'])
+		Traceback (most recent call last):
+		TypeError: text must be a string
+
+		>>> text_indentation(":Hello, how are you!!")
+		:
+		<BLANKLINE>
+		Hello, how are you!!
+

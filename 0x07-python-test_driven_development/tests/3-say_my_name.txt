@@ -1,0 +1,34 @@
+``say_my_name()`` function that prints out the name passed as arguments
+::
+		>>> say_my_name = __import__('3-say_my_name').say_my_name
+		
+		>>> say_my_name("Tom")
+		My name is Tom 
+
+		>>> say_my_name("Tom", "Obura")
+		My name is Tom Obura
+
+		>>> say_my_name(None)
+		Traceback (most recent call last):
+		TypeError: first_name must be a string
+
+		>>> say_my_name("Tom", False)
+		Traceback (most recent call last):
+		TypeError: last_name must be a string
+
+		>>> say_my_name(4, "Amokachi")
+		Traceback (most recent call last):
+		TypeError: first_name must be a string
+
+		>>> say_my_name(['P', 'e', 't', 'e', 'r'], "Dawo")
+		Traceback (most recent call last):
+		TypeError: first_name must be a string
+
+		>>> say_my_name("".join(['P', 'e', 't', 'e', 'r']), "Dawo")
+		My name is Peter Dawo
+		
+		>>> say_my_name("Tom", "")
+		My name is Tom 
+
+		>>> say_my_name("Pyth0n", "Kilund1z33y#32")
+		My name is Pyth0n Kilund1z33y#32
