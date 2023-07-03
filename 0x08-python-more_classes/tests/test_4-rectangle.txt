@@ -1,0 +1,75 @@
+
+		>>> Rectangle = __import__('4-rectangle').Rectangle
+
+		>>> x = Rectangle(3, 4)
+
+		>>> x.height = 10
+
+		>>> print(x.height)
+		10
+		
+		>>> x.height = 4
+
+		>>> print(str(x))
+		###
+		###
+		###
+		###
+
+		>>> print(x)
+		###
+		###
+		###
+		###
+
+		>>> print(repr(x))
+		Rectangle(3, 4)
+
+		>>> x = Rectangle(4)
+
+		>>> print(str(x))
+		<BLANKLINE>
+
+		>>> print(x)
+		<BLANKLINE>
+
+		>>> print(x.area())
+		0
+
+		>>> print(x.perimeter())
+		0
+
+		>>> x = Rectangle()
+
+		>>> print(x.area())
+		0
+
+		>>> print(x.perimeter())
+		0
+
+		>>> x.width = False
+		Traceback (most recent call last):
+		TypeError: width must be an integer
+
+		>>> x.height = -3
+		Traceback (most recent call last):
+		ValueError: height must be >= 0
+
+		>>> x = Rectangle(8, 10)
+
+		>>> print(repr(x))
+		Rectangle(8, 10)
+
+		>>> new_rect = eval(repr(x))
+
+		>>> print(new_rect)
+		########
+		########
+		########
+		########
+		########
+		########
+		########
+		########
+		########
+		########

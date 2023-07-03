@@ -1,0 +1,137 @@
+
+		>>> Rectangle = __import__('7-rectangle').Rectangle
+
+		>>> x = Rectangle(3, 4)
+
+		>>> x.height = 10
+
+		>>> print(x.height)
+		10
+		
+		>>> x.height = 4
+
+		>>> print(str(x))
+		###
+		###
+		###
+		###
+
+		>>> print(x)
+		###
+		###
+		###
+		###
+
+		>>> x.print_symbol = '&'
+
+		>>> print(x)
+		&&&
+		&&&
+		&&&
+		&&&
+
+		>>> x.print_symbol = "Omena"
+
+		>>> print(x)
+		OmenaOmenaOmena
+		OmenaOmenaOmena
+		OmenaOmenaOmena
+		OmenaOmenaOmena
+
+		>>> print(repr(x))
+		Rectangle(3, 4)
+
+		>>> print(Rectangle.number_of_instances)
+		1
+
+		>>> y = Rectangle(4)
+
+		>>> print(str(y))
+		<BLANKLINE>
+
+		>>> print(y)
+		<BLANKLINE>
+
+		>>> print(y.area())
+		0
+
+		>>> print(y.perimeter())
+		0
+
+		>>> print(Rectangle.number_of_instances)
+		2
+
+		>>> z = Rectangle()
+
+		>>> print(z.area())
+		0
+
+		>>> print(z.perimeter())
+		0
+
+		>>> print(Rectangle.number_of_instances)
+		3
+
+		>>> x.width = False
+		Traceback (most recent call last):
+		TypeError: width must be an integer
+
+		>>> x.height = -3
+		Traceback (most recent call last):
+		ValueError: height must be >= 0
+
+		>>> a = Rectangle(8, 10)
+
+		>>> print(Rectangle.number_of_instances)
+		4
+
+		>>> print(repr(a))
+		Rectangle(8, 10)
+
+		>>> new_rect = eval(repr(a))
+
+		>>> print(Rectangle.number_of_instances)
+		5
+
+		>>> print(new_rect)
+		########
+		########
+		########
+		########
+		########
+		########
+		########
+		########
+		########
+		########
+
+		>>> Rectangle.print_symbol = ['*', '*']
+
+		>>> print(new_rect)
+		['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']
+		['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']
+		['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']
+		['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']
+		['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']
+		['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']
+		['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']
+		['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']
+		['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']
+		['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']['*', '*']
+
+
+		>>> x.print_symbol = ['*', '*']
+
+		>>> print(x)
+		['*', '*']['*', '*']['*', '*']
+		['*', '*']['*', '*']['*', '*']
+		['*', '*']['*', '*']['*', '*']
+		['*', '*']['*', '*']['*', '*']
+
+		>>> del new_rect
+		Bye rectangle...
+
+		>>> print(Rectangle.number_of_instances)
+		4
+
+

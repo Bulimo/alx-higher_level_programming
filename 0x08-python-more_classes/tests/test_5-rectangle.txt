@@ -1,0 +1,78 @@
+
+		>>> Rectangle = __import__('5-rectangle').Rectangle
+
+		>>> x = Rectangle(3, 4)
+
+		>>> x.height = 10
+
+		>>> print(x.height)
+		10
+		
+		>>> x.height = 4
+
+		>>> print(str(x))
+		###
+		###
+		###
+		###
+
+		>>> print(x)
+		###
+		###
+		###
+		###
+
+		>>> print(repr(x))
+		Rectangle(3, 4)
+
+		>>> y = Rectangle(4)
+
+		>>> print(str(y))
+		<BLANKLINE>
+
+		>>> print(y)
+		<BLANKLINE>
+
+		>>> print(y.area())
+		0
+
+		>>> print(y.perimeter())
+		0
+
+		>>> z = Rectangle()
+
+		>>> print(z.area())
+		0
+
+		>>> print(z.perimeter())
+		0
+
+		>>> x.width = False
+		Traceback (most recent call last):
+		TypeError: width must be an integer
+
+		>>> x.height = -3
+		Traceback (most recent call last):
+		ValueError: height must be >= 0
+
+		>>> a = Rectangle(8, 10)
+
+		>>> print(repr(a))
+		Rectangle(8, 10)
+
+		>>> new_rect = eval(repr(a))
+
+		>>> print(new_rect)
+		########
+		########
+		########
+		########
+		########
+		########
+		########
+		########
+		########
+		########
+
+		>>> del new_rect
+		Bye rectangle...

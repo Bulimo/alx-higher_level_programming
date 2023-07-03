@@ -1,0 +1,26 @@
+
+		>>> Rectangle = __import__('3-rectangle').Rectangle
+
+		>>> x = Rectangle(3, 4)
+
+		>>> print(str(x))
+		###
+		###
+		###
+		###
+
+		>>> print(x)
+		###
+		###
+		###
+		###
+
+		>>> x = Rectangle(4)
+
+		>>> print(str(x))
+		<BLANKLINE>
+
+		>>> print(x)
+		<BLANKLINE>
+
+
