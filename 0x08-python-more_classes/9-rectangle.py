@@ -123,7 +123,7 @@ class Rectangle:
         Method that returns a string representation of the Rectangle object.
         Allows for an object to be recreated from the string returned
         """
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
         """
@@ -155,12 +155,6 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """
-        Method that initializes a rectangle instance that is ssquare shaped
-
-        Args:
-            size: size of the sides of the new rectangle
-
-        Return:
-            A rectangle of sides equal to size
+        Returns a new Rectangle instance with width == height == size
         """
         return cls(size, size)
