@@ -28,6 +28,10 @@ def matrix_divided(matrix, div):
                         "integers/floats")
     res = []
     len_0 = len(matrix[0])
+    if len_0 == 0:
+        raise TypeError("matrix must be a matrix (list of lists) of "
+                        "integers/floats")
+
     for row in matrix:
         if type(row) != list:
             raise TypeError("matrix must be a matrix (list of lists) of "

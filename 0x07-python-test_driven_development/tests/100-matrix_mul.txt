@@ -1,0 +1,67 @@
+
+
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+		>>> m_a = [[0, 1], [1, 1]]
+		>>> m_b = [[1, 1], [1, 1]]
+		>>> print(matrix_mul(m_a, m_b))
+		[[1, 1], [2, 2]]
+
+		>>> m_a = [[1, -1], [1, 1]]
+		>>> m_b = [[1], [1]]
+		>>> print(matrix_mul(m_a, m_b))
+		[[0], [2]]
+
+		>>> m_a = [[-1, 0], [0, -1]]
+		>>> m_b = [[1, 1], [1, 1]]
+		>>> print(matrix_mul(m_a, m_b))
+		[[-1, -1], [-1, -1]]
+
+		>>> m_a = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]
+		>>> m_b = [[0, 1, 0], [1, 0, 1], [1, 1, 0]]
+		>>> print(matrix_mul(m_a, m_b))
+		[[2, 2, 1], [2, 2, 1], [2, 2, 1]]
+
+		>>> m_a = [[1, 2, 3], [4, 5, 6]]
+		>>> m_b = [[7.0, 8.0], [9.0, 10.0], [11.0, 12.0]]
+		>>> print(matrix_mul(m_a, m_b))
+		[[58.0, 64.0], [139.0, 154.0]]
+
+		>>> m_a = []
+		>>> m_b = [[2, 0], [1, 2]]
+		>>> print(matrix_mul(m_a, m_b))
+		Traceback (most recent call last):
+		...
+		ValueError: m_a can't be empty
+
+		>>> m_a = [[2, 0], [1, 2]]
+		>>> m_b = []
+		>>> print(matrix_mul(m_a, m_b))
+		Traceback (most recent call last):
+		...
+		ValueError: m_b can't be empty
+
+		>>> m_a = [[2, 0], [1, 2]]
+		>>> m_b = [[]]
+		>>> print(matrix_mul(m_a, m_b))
+		Traceback (most recent call last):
+		...
+		ValueError: m_b can't be empty
+
+		>>> m_a = [[1, 2], [3, 4], [5, 1]]
+		>>> m_b = [[2], [4]]
+		>>> print(matrix_mul(m_a, m_b))
+		[[10], [22], [14]]
+
+		>>> m_a = [["hey"], ["you"]]
+		>>> print(matrix_mul(m_a, m_a))
+		Traceback (most recent call last):
+		...
+		TypeError: m_a should contain only integers or floats
+
+		>>> m_a = (1, 2)
+		>>> m_b = [[1, 2], [1, 2]]
+		>>> print(matrix_mul(m_a, m_b))
+		Traceback (most recent call last):
+		...
+		TypeError: m_a must be a list

@@ -1,0 +1,40 @@
+
+
+	 >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+     >>> print(lazy_matrix_mul([[1, 2], [2, 1]], [[0, 1], [1, 0]]))
+     [[2 1]
+      [1 2]]
+
+     >>> print(lazy_matrix_mul([[-1, 0], [0, -1]], [[1, 1], [1, 1]]))
+     [[-1 -1]
+      [-1 -1]]
+
+     >>> print(lazy_matrix_mul([], [[1, 0], [0, 1]]))
+     Traceback (most recent call last):
+     ...
+     ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 2 is different from 0)
+
+     >>> print(lazy_matrix_mul([[1, 0], [0, 1]], []))
+     Traceback (most recent call last):
+     ...
+     ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 0 is different from 2)
+
+     >>> print(lazy_matrix_mul([[1, 0], [0, 1]], [[]]))
+     Traceback (most recent call last):
+     ...
+     ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 1 is different from 2)
+
+     >>> print(lazy_matrix_mul([[0, 1], [1, 0]], [[1, 1], [1, 1, 1]]))
+     Traceback (most recent call last):
+     ...
+     ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
+
+     >>> print(lazy_matrix_mul([[0, 1, 1], [1, 0]], [[1, 1], [1, 1]]))
+     Traceback (most recent call last):
+     ...
+     ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
+
+     >>> print(lazy_matrix_mul([[0, 1], "mary"], [[1, 1], [1, 1]]))
+     Traceback (most recent call last):
+     ...
+     ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.

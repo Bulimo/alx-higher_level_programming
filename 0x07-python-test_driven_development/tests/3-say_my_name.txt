@@ -32,3 +32,11 @@
 
 		>>> say_my_name("Pyth0n", "Kilund1z33y#32")
 		My name is Pyth0n Kilund1z33y#32
+
+		>>> say_my_name("Tom", "Omondi", "enugu")
+		Traceback (most recent call last):
+		TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+		>>> say_my_name()
+		Traceback (most recent call last):
+		TypeError: say_my_name() missing 1 required positional argument: 'first_name'
