@@ -41,6 +41,14 @@
 		Traceback (most recent call last):
 		TypeError: matrix must be a matrix (list of lists) of integers/floats
 
+		>>> matrix_divided([], 2)
+		Traceback (most recent call last):
+		TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+		>>> matrix_divided([7], 2)
+		Traceback (most recent call last):
+		TypeError: matrix must be a matrix (list of lists) of integers/floats
+
 		>>> matrix_divided([[4, 5, 6], [7, True, 9]], 2)
 		Traceback (most recent call last):
 		TypeError: matrix must be a matrix (list of lists) of integers/floats
