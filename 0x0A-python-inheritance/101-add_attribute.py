@@ -19,6 +19,6 @@ def add_attribute(obj, attr, value):
     """
     invalid_types = [int, float, complex, str, bytes, bytearray, list, tuple,
                      dict, set, frozenset, bool, None]
-    if type(obj) in invalid_types:
+    if type(obj) in invalid_types or hasattr(obj, attr):
         raise TypeError("can't add new attribute")
     setattr(obj, attr, value)

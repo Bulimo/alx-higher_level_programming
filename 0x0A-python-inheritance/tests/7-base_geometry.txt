@@ -83,3 +83,8 @@ Test for invalid cases
 		Traceback (most recent call last):
 		...
 		TypeError: int1 must be an integer
+
+		>>> bg.integer_validator("int1", "John")
+		Traceback (most recent call last):
+		...
+		TypeError: int1 must be an integer
