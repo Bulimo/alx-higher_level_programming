@@ -35,7 +35,7 @@ Test for invalid cases
 		>>> bg.integer_validator()
 		Traceback (most recent call last):
 		...
-		TypeError: integer_validator() missing 2 required positional argument: 'name' and 'value'
+		TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
 		>>> n = float('inf')
 
@@ -52,14 +52,14 @@ Test for invalid cases
 		>>> bg.integer_validator("int1", [1, 2])
 		Traceback (most recent call last):
 		...
-		ValueError: int1 must be greater than 0
+		TypeError: int1 must be an integer
 
 		>>> bg.integer_validator("int1", "123")
 		Traceback (most recent call last):
 		...
-		ValueError: int1 must be greater than 0
+		TypeError: int1 must be an integer
 
 		>>> bg.integer_validator("int1", (1, 2))
 		Traceback (most recent call last):
 		...
-		ValueError: int1 must be greater than 0
+		TypeError: int1 must be an integer
