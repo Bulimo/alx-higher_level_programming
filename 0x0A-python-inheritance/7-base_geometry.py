@@ -12,7 +12,9 @@ Methods:
 
 class BaseGeometry:
     """
-    Class with method area()
+    Methods:
+        area()
+        integer_validator()
     """
     def area(self):
         """
