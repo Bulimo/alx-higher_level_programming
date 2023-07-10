@@ -1,0 +1,92 @@
+Test cases for module '1-my_list'. 
+The tests cases are to confirm the function 'print_sorted'
+does actually return correctly sorted list
+::
+Import the module:
+		>>> MyList = __import__('1-my_list').MyList
+
+Test for documentation:
+		>>> st = __import__("1-my_list").__doc__
+
+		>>> len(st) > 1
+		True
+
+		>>> st = __import__("1-my_list").MyList.__doc__
+
+		>>> len(st) > 1
+		True
+
+		>>> st = __import__("1-my_list").MyList.print_sorted.__doc__
+
+		>>> len(st) > 1
+		True
+
+Test for list methods:
+
+		>>> alist = MyList()
+
+		>>> print(alist)
+		[]
+
+		>>> alist.append(2)
+
+		>>> alist
+		[2]
+
+		>>> alist += MyList([3, 6, 8])
+
+		>>> alist
+		[2, 3, 6, 8]
+
+		>>> print(str(alist))
+		[2, 3, 6, 8]
+
+		>>> alist.count(2)
+		1
+
+		>>> alist.remove(6)
+
+		>>> alist
+		[2, 3, 8]
+
+		>>> alist.pop()
+		8
+		
+		>>> len(alist)
+		2
+
+Test the sorting method
+Test for positive integrs:
+		>>> a_list = MyList()
+
+		>>> a_list.append(4)
+
+		>>> a_list.append(6)
+
+		>>> a_list.append(2)
+
+		>>> a_list.print_sorted()
+		[2, 4, 6]
+
+		>>> a_list = MyList([10, 3, 5, 8, 2])
+
+		>>> a_list.print_sorted()
+		[2, 3, 5, 8, 10]
+
+		>>> a_list = MyList([10, 8, 5, 3, 2])
+
+		>>> a_list.print_sorted()
+		[2, 3, 5, 8, 10]
+
+Test for negatie numbers:
+		>>> a_list = MyList([-3, -5, -2, -8, -10])
+
+		>>> a_list.print_sorted()
+		[-10, -8, -5, -3, -2]
+
+		>>> a_list = MyList([3, -5, -2, 8, -10])
+
+		>>> a_list.print_sorted()
+		[-10, -5, -2, 3, 8]
+
+
