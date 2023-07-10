@@ -14,4 +14,12 @@ Returns:
 
 
 def is_same_class(obj, a_class):
+    """
+    Notes:
+        use type() to get specific class
+        use isinstance() to get class and any parent classes too
+        use issubclass() to get what object is a subclass of
+    Returns:
+        True if obj is exactly an instance of specified class
+    """
     return type(obj) is a_class

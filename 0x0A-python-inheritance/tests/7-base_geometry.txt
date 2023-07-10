@@ -32,10 +32,10 @@ Test for invalid cases
 		...
 		TypeError: integer_validator() missing 1 required positional argument: 'value'
 
-		>>> bg.integer_validator(1)
+		>>> bg.integer_validator()
 		Traceback (most recent call last):
 		...
-		TypeError: integer_validator() missing 1 required positional argument: 'value'
+		TypeError: integer_validator() missing 2 required positional argument: 'name' and 'value'
 
 		>>> n = float('inf')
 
@@ -43,3 +43,23 @@ Test for invalid cases
 		Traceback (most recent call last):
 		...
 		OverflowError: cannot convert float infinity to integer
+
+		>>> bg.area()
+		Traceback (most recent call last):
+		...
+		Exception: area() is not implemented
+
+		>>> bg.integer_validator("int1", [1, 2])
+		Traceback (most recent call last):
+		...
+		ValueError: int1 must be greater than 0
+
+		>>> bg.integer_validator("int1", "123")
+		Traceback (most recent call last):
+		...
+		ValueError: int1 must be greater than 0
+
+		>>> bg.integer_validator("int1", (1, 2))
+		Traceback (most recent call last):
+		...
+		ValueError: int1 must be greater than 0

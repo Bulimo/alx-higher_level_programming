@@ -2,7 +2,7 @@
 """
 Module 11-square
 
-Defines Class Square that inherits from Rectangle class
+Defines Class Square with Rectangle class as base
 
 """
 Rectangle = __import__('9-rectangle').Rectangle
@@ -14,6 +14,7 @@ class Square(Rectangle):
 
     Methods:
         __init__()
+        __str__()
     """
     def __init__(self, size):
         """
@@ -22,8 +23,8 @@ class Square(Rectangle):
         Args:
             size(int): size of the square
         """
-        super().__init__(size, size)
         self.integer_validator("size", size)
+        super().__init__(size, size)
         self.__size = size
 
     def area(self):
@@ -42,4 +43,5 @@ class Square(Rectangle):
         Returns:
             The string representation of the Squre
         """
-        return "[Square] {}/{}".format(self.__size, self.__size)
+        return "[{:s}] {:d}/{:d}".format(self.__class__.__name__,
+                                         self.__size, self.__size)
