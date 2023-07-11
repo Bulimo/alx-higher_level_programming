@@ -18,7 +18,7 @@ def pascal_triangle(n):
         List of list of Pascal's triangle
     """
     if n <= 0:
-        return pascal
+        return []
 
     pascal = [[1]]
     for c in range(1, n):

@@ -46,7 +46,7 @@ class Student:
         Returns:
             dictioanry of retrieved attributes
         """
-        if attrs is None or len(attrs) == 0:
+        if attrs is None:
             return self.__dict__
         ds = self.__dict__
         return {k: ds[k] for k in attrs & ds.keys()}
