@@ -21,18 +21,23 @@ try:
 
         log = line.split(" ")
         size += int(log[-1])
-        status_codes[log[-2]] += 1
+        if log[-2] in status_codes:
+            status_codes[log[-2]] += 1
         line_count += 1
         if line_count % 10 == 0:
             print("File size: {:d}".format(size))
             for k, v in sorted(status_codes.items()):
-                print("{:s}: {:d}".format(k, v))
+                if v > 0:
+                    print("{:s}: {:d}".format(k, v))
 
 except KeyboardInterrupt:
     print("File size: {:d}".format(size))
     for k, v in sorted(status_codes.items()):
-        print("{:s}: {:d}".format(k, v))
+        if v > 0:
+            print("{:s}: {:d}".format(k, v))
     raise
-    print("File size: {:d}".format(size))
-    for k, v in sorted(status_codes.items()):
+
+print("File size: {:d}".format(size))
+for k, v in sorted(status_codes.items()):
+    if v > 0:
         print("{:s}: {:d}".format(k, v))
