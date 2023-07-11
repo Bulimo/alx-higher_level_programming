@@ -32,3 +32,7 @@ except KeyboardInterrupt:
     print("File size: {:d}".format(size))
     for k, v in sorted(status_codes.items()):
         print("{:s}: {:d}".format(k, v))
+    raise
+    print("File size: {:d}".format(size))
+    for k, v in sorted(status_codes.items()):
+        print("{:s}: {:d}".format(k, v))
