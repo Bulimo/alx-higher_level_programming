@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import json
 """
 Module 5-save_to_json_file
 
@@ -19,6 +18,7 @@ def save_to_json_file(my_obj, filename):
     Returns:
         None
     """
+    import json
     # json_obj = json.dumps(my_obj)
 
     with open(filename, mode="w", encoding="utf-8") as my_file:
