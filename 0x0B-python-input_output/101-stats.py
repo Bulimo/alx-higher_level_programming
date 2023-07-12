@@ -20,7 +20,10 @@ try:
             continue
 
         log = line.split(" ")
-        size += int(log[-1])
+        try:
+            size += int(log[-1])
+        except Exception:
+            pass
         if log[-2] in status_codes:
             status_codes[log[-2]] += 1
         line_count += 1
