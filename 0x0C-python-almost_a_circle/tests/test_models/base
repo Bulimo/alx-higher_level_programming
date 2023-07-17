@@ -1,0 +1,76 @@
+#!/usr/bin/python3
+"""
+test_base module
+
+Tests for base class
+"""
+import unittest
+from models.base import Base
+
+
+class testBase(unittest.TestCase):
+    """
+    Defines methods to test the Base class
+    """
+    @classmethod
+    def setUpClass(cls):
+        """
+        Create an instance of the Base class
+        """
+        print("\nset up")
+        cls.b1 = Base()
+        cls.b2 = Base()
+        cls.b3 = Base(120)
+        cls.b4 = Base("peter")
+        cls.b5 = Base()
+
+    @classmethod
+    def tearDownClass(cls):
+        """
+        Clears the instances created
+        """
+        print("tear down\n")
+        cls.b1 = None
+        cls.b2 = None
+        cls.b3 = None
+        cls.b4 = None
+        cls.b5 = None
+
+    def test_id_value(self):
+        """
+        tests on the value of public instance id
+        """
+        self.assertEqual(self.b1.id, 1)
+        self.assertEqual(self.b2.id, 2)
+        self.assertEqual(self.b3.id, 120)
+        self.assertEqual(self.b4.id, "peter")
+        self.assertEqual(self.b5.id, 3)
+
+    def test_object_created(self):
+        """
+        confirms an object instance is created
+        """
+        self.assertTrue(self.b1)
+        self.assertTrue(self.b2)
+        self.assertTrue(self.b3)
+        self.assertTrue(self.b4)
+        self.assertTrue(self.b5)
+
+    def test_private_attribute(self):
+        """
+        confirms __nb_objects is a private class attribute
+        """
+        self.assertTrue('__nb_objects' not in self.b1.__dict__.keys())
+        self.assertTrue('__nb_objects' not in self.b2.__dict__.keys())
+        self.assertTrue('__nb_objects' not in self.b3.__dict__.keys())
+        self.assertTrue('__nb_objects' not in self.b4.__dict__.keys())
+        self.assertTrue('__nb_objects' not in self.b5.__dict__.keys())
+
+    def test_updated_id_values(self):
+        """
+        confirms the values of id can be updated after object creation
+        """
+        self.b1.id = 20
+        self.b5.id = 77
+        self.assertEqual(self.b1.id, 20)
+        self.assertEqual(self.b5.id, 77)
