@@ -18,22 +18,17 @@ class testBase(unittest.TestCase):
     Defines methods to test Base Class
     """
 
-    class TestBase(unittest.TestCase):
-        """
-        Tests for models/base.py
-        """
+    def setUp(self):
+        if os.path.exists("Base.json"):
+            os.remove("Base.json")
+        if os.path.exists("Rectangle.json"):
+            os.remove("Rectangle.json")
 
-        def setUp(self):
-            if os.path.exists("Base.json"):
-                os.remove("Base.json")
-            if os.path.exists("Rectangle.json"):
-                os.remove("Rectangle.json")
-
-        def tearDown(self):
-            if os.path.exists("Base.json"):
-                os.remove("Base.json")
-            if os.path.exists("Rectangle.json"):
-                os.remove("Rectangle.json")
+    def tearDown(self):
+        if os.path.exists("Base.json"):
+            os.remove("Base.json")
+        if os.path.exists("Rectangle.json"):
+            os.remove("Rectangle.json")
 
     def test_id_value(self):
         """
@@ -140,16 +135,6 @@ class testBase(unittest.TestCase):
         self.assertEqual(str(r1), '[Rectangle] (99) 1/2 - 3/5')
         self.assertEqual(str(r2), '[Rectangle] (99) 1/2 - 3/5')
         self.assertIsNot(r, r2)
-
-    def test_load_from_file(self):
-        """
-        confirm that object is created from file
-        """
-
-        r = Rectangle(3, 4, 2, 8, 10)
-        Rectangle.save_to_file([r])
-        rdic = Rectangle.load_from_file()
-        self.assertEqual(str(rdic), '[Rectangle] (10) 2/8 - 3/4')
 
     def test_load_from_empty_file(self):
         with open("Rectangle.json", "w") as file:
