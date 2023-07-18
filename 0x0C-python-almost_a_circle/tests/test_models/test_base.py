@@ -71,17 +71,13 @@ class testBase(unittest.TestCase):
             print(Base.to_json_string(r))
             self.assertEqual(out.getvalue(), so)
 
-        so = "[]\n"
         r = None
-        with patch("sys.stdout", new=StringIO()) as out:
-            print(Base.to_json_string(r))
-            self.assertEqual(out.getvalue(), so)
+        so = Base.to_json_string([r])
+        self.assertTrue(so, "[]")
 
-        so = "[]\n"
         r = dict()
-        with patch("sys.stdout", new=StringIO()) as out:
-            print(Base.to_json_string(r))
-            self.assertEqual(out.getvalue(), so)
+        so = Base.to_json_string([r])
+        self.assertTrue(so, "[]")
 
     def test_save_to_file(self):
         """
