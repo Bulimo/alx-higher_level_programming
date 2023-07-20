@@ -6,6 +6,8 @@ Defines Class Base
 """
 
 import json
+import csv
+import os
 
 
 class Base:
@@ -45,8 +47,8 @@ class Base:
             Rreturns the JSON string representation of list_dictionaries
         """
 
-        if list_dictionaries is None:
-            list_dictionaries = []
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
@@ -85,7 +87,7 @@ class Base:
         """
 
         if json_string is None or len(json_string) == 0:
-            json_string = '[]'
+            return []
         return json.loads(json_string)
 
     @classmethod
@@ -134,4 +136,43 @@ class Base:
         except Exception:
             return []
 
+        return instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serialize list_objs in CSV format and saves it to a file.
+
+        Args:
+            list_objs (list): List of instances to serialize
+        """
+
+        filename = "{}.csv".format(cls.__name__)
+        with open(filename, "w", newline="") as my_file:
+            writer = csv.writer(my_file)
+            if list_objs is not None:
+                writer.writerow(list_objs[0].to_dictionary().keys())
+                for obj in list_objs:
+                    writer.writerow(obj.to_dictionary().values())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserialize CSV format file and create Instance objects.
+
+        Returns:
+            list: List of instances
+        """
+        filename = "{}.csv".format(cls.__name__)
+        instances = []
+        if os.path.exists(filename):
+            with open(filename, "r", newline="") as my_file:
+                reader = csv.reader(my_file)
+                next(reader, None)
+                for row in reader:
+                    row = [int(value) for value in row]
+                    if cls.__name__ == "Rectangle":
+                        obj = cls(*row[1:])
+                    elif cls.__name__ == "Square":
+                        obj = cls(row[1])
+                    obj.id = row[0]
+                    instances.append(obj)
         return instances
