@@ -19,6 +19,7 @@ Each folder in the repository is a test on specific concepts of the language.
     . 0x0D-SQL_introduction
     . 0x0E-SQL_more_queries
     . 0x12-javascript-warm_up
+    . 0x13-javascript_objects_scopes_closures
 
 ## Authors
 
