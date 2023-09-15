@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
-module 1-filter_states
+module 4-cities_by_states
 """
 import MySQLdb
 
 
 def main(uname, passw, dbname):
     """
-    Implements script to run an SQL querry that filters states
+    Implements script to run an SQL querry that lists cities by states
     Args:
         uname (string): username
         passw (string): password
@@ -17,7 +17,9 @@ def main(uname, passw, dbname):
                          user=uname, password=passw, database=dbname)
     cur = db.cursor()
     cur.execute(
-        "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
+        "SELECT cities.id, cities.name, states.name FROM cities \
+        JOIN states ON cities.state_id = states.id \
+        ORDER BY cities.id ASC")
     rows = cur.fetchall()
     for row in rows:
         print(row)

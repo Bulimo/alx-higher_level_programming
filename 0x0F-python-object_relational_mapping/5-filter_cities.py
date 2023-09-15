@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
-module 2-filter_states
+module 4-cities_by_states
 """
 import MySQLdb
 
 
 def main(uname, passw, dbname, state_name):
     """
-    Implements script to run an SQL querry that filters states by user input
+    Implements script to run an SQL querry that filters cities by states
     Args:
         uname (string): username
         passw (string): password
@@ -17,12 +17,22 @@ def main(uname, passw, dbname, state_name):
     db = MySQLdb.connect(host="localhost", port=3306,
                          user=uname, password=passw, database=dbname)
     cur = db.cursor()
-    sql_querry = "SELECT * FROM states WHERE name LIKE BINARY '{}' \
-                ORDER BY id ASC".format(state_name)
-    cur.execute(sql_querry)
+    sql_query = "SELECT cities.name FROM cities \
+        JOIN states ON cities.state_id = states.id \
+        WHERE states.name = BINARY %s ORDER BY cities.id ASC"
+    cur.execute(sql_query, (state_name,))
     rows = cur.fetchall()
-    for row in rows:
-        print(row)
+    if len(rows) == 0:
+        print()
+    else:
+        tup = ()
+        for row in rows:
+            tup += row
+        for i in range(len(tup)):
+            if i == len(tup) - 1:
+                print(tup[i])
+            else:
+                print(tup[i], end=', ')
 
     cur.close()
     db.close()

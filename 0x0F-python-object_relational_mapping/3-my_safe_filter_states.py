@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-module 2-filter_states
+module 3-filter_states
 """
 import MySQLdb
 
@@ -8,6 +8,7 @@ import MySQLdb
 def main(uname, passw, dbname, state_name):
     """
     Implements script to run an SQL querry that filters states by user input
+    but checking for SQL injection
     Args:
         uname (string): username
         passw (string): password
@@ -17,9 +18,9 @@ def main(uname, passw, dbname, state_name):
     db = MySQLdb.connect(host="localhost", port=3306,
                          user=uname, password=passw, database=dbname)
     cur = db.cursor()
-    sql_querry = "SELECT * FROM states WHERE name LIKE BINARY '{}' \
+    sql_querry = "SELECT * FROM states WHERE name LIKE BINARY %s \
                 ORDER BY id ASC".format(state_name)
-    cur.execute(sql_querry)
+    cur.execute(sql_querry, (state_name,))
     rows = cur.fetchall()
     for row in rows:
         print(row)
