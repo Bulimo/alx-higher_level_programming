@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-Module 7-model_state_fetch_all
-ists all State objects from the database hbtn_0e_6_usas
+Module 13-model_state_delete_a
+deletes all State objects with a name containing the letter a
+from the database hbtn_0e_6_usa
 """
 import sys
 from model_state import Base, State
@@ -13,6 +14,8 @@ if __name__ == "__main__":
         sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     my_session = Session()
-    data = my_session.query(State).order_by(State.id).all()
-    for elem in data:
-        print("{}: {}".format(elem.id, elem.name))
+
+    del_state = my_session.query(State).filter(State.name.ilike('%a%'))
+    for state in del_state:
+        my_session.delete(state)
+    my_session.commit()
