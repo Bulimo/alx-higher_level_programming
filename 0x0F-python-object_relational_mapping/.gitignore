@@ -1,3 +1,4 @@
 createfile
 *.sql
 .vscode/settings.json
+__pycache__/*
