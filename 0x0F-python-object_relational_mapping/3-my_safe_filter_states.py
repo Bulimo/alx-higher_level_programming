@@ -19,7 +19,7 @@ def main(uname, passw, dbname, state_name):
                          user=uname, password=passw, database=dbname)
     cur = db.cursor()
     sql_querry = "SELECT * FROM states WHERE name LIKE BINARY %s \
-                ORDER BY id ASC".format(state_name)
+                ORDER BY id ASC"
     cur.execute(sql_querry, (state_name,))
     rows = cur.fetchall()
     for row in rows:
