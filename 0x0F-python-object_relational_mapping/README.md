@@ -46,3 +46,8 @@
     . 13-model_state_delete_a.py
     . model_city.py
     . 14-model_city_fetch_by_state.py
+    . relationship_city.py
+    . relationship_state.py
+    . 100-relationship_states_cities.py
+    . 101-relationship_states_cities_list.py
+    . 102-relationship_cities_states_list.py
