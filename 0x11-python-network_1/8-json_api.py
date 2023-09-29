@@ -8,9 +8,12 @@ if __name__ == '__main__':
     import requests
     from sys import argv
 
-    data = {"q": ""}
-    if len(argv) >= 2:
-        data['q'] = argv[1]
+    if len(argv) < 2:
+        val = ""
+    else:
+        val = argv[1]
+    data = {}
+    data['q'] = val
 
     res = requests.get('http://0.0.0.0:5000/search_user', data=data)
 
