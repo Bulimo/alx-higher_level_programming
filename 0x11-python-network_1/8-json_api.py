@@ -12,8 +12,7 @@ if __name__ == '__main__':
         val = ""
     else:
         val = argv[1]
-    data = {}
-    data['q'] = val
+    data = {"q": val}
 
     res = requests.get('http://0.0.0.0:5000/search_user', data=data)
 
