@@ -15,7 +15,7 @@ if __name__ == '__main__':
     data = {"q": val}
     url = 'http://0.0.0.0:5000/search_user'
 
-    res = requests.get(url, data=data)
+    res = requests.post(url, data=data)
 
     # Check if the response contains valid JSON and is not empty
     try:
