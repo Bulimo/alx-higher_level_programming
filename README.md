@@ -23,6 +23,7 @@ Each folder in the repository is a test on specific concepts of the language.
     . 0x0F-python-object_relational_mapping
     . 0x10-python-network_0
     . 0x11-python-network_1
+    . 0x14-javascript-web_scraping
 
 ## Authors
 
